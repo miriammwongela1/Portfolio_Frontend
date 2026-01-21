@@ -31,11 +31,11 @@ export default function Projects() {
     const handleHashChange = () => {
       const hash = window.location.hash.toLowerCase();
       
-      if (hash.includes("skills")) {
+      if (hash.includes("#skills")) {
         setActiveTab("skills");
-      } else if (hash.includes("certificates")) {
+      } else if (hash.includes("#certificates")) {
         setActiveTab("certificates");
-      } else {
+      } else if (hash.includes("#projects")) {
         setActiveTab("projects");
       }
     };
@@ -151,12 +151,12 @@ export default function Projects() {
                     <img src={project.image} alt={project.title} />
                     <div className={styles.overlay}>
 
-                      <a
-                      href={project.details} 
+                      <Link
+                      to={project.details} 
                       className={`${styles.btn} ${styles.btnSecondary}`} 
                       > 
                         Details 
-                      </a>
+                      </Link>
                     </div>
                   </div>
                   <div className={styles.projectContent}>
